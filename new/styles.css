@@ -1,0 +1,206 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #1b2942;
+  line-height: 1.6;
+}
+
+/* Section Styling */
+.projects-section {
+  padding: 50px 20px;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  color: #1b2942;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: repeating-linear-gradient(
+    to right,
+    #7dc10d,
+    #7dc10d 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  margin: 10px auto;
+}
+
+/* Flexbox for Layout */
+.projects-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Headline Section */
+.headline-box {
+  margin-top: 420px;
+  right: 200px;
+  flex: 0.4;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  padding-right: 20px;
+}
+
+.headline-box::after {
+  content: "";
+  position: absolute;
+  top: 50%; /* Align with the center of the headline */
+  left: 100%; /* Start from the edge of the headline */
+  width: 50%; /* Adjust width to connect with the projects section */
+  height: 2px;
+  background-color: #7dc10d;
+  z-index: 1;
+}
+
+.headline {
+  border: 4px solid #7dc10d;
+  padding: 20px;
+  background-color: #ffffff;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  max-width: 300px;
+}
+
+.headline h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #1b2942;
+  line-height: 1.4;
+}
+
+/* Projects List Section */
+.projects-list {
+  flex: 0.6;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+}
+
+/* Vertical Line for Connection */
+.projects-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 47%;
+  width: 2px;
+  height: 100%;
+  background-color: #7dc10d;
+  z-index: 1;
+}
+
+/* Individual Project Items */
+.project-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.project-item .icon-box {
+  width: 40px;
+  height: 40px;
+  background-color: #7dc10d;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 20px;
+}
+
+.project-item .content {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.project-item h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #1b2942;
+}
+
+.project-item p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+
+.project-item .expand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1b2942;
+  margin-left: 10px;
+}
+
+/* Horizontal Connecting Line */
+.project-item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 10%;
+  height: 2px;
+  background-color: #7dc10d;
+  z-index: 0;
+}
+
+.projects-list .project-item:first-child::before {
+  content: none; /* Remove line for the first item */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .headline-box {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-right: 0;
+  }
+
+  .projects-content::before {
+    display: none; /* Remove vertical line on small screens */
+  }
+
+  .projects-list .project-item::before {
+    display: none; /* Remove horizontal lines on small screens */
+  }
+}
